@@ -1,0 +1,130 @@
+<section class="menu cid-qqW18chyQi" once="menu" id="menu1-g" data-rv-view="110">
+
+  <nav class="navbar navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </button>
+    <div class="menu-logo">
+      <div class="navbar-brand">
+        <span class="navbar-logo">
+          <img src="assets/prefeitura.gif" alt="App" title="" media-simple="true" style="height: 3.8rem;">
+        </span>
+      </div>
+    </div>
+  </nav>
+</section>
+
+<section class="section-table cid-qrplaxnTgf" id="table1-o" data-rv-view="67">
+  <h2 class="mbr-section-title mbr-fonts-style align-center pb-3 display-2">
+    Atualizacion Participantes
+  </h2>
+  <div class="table-wrapper">
+    <div class="container">
+      <div class="row search">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <!-- <div class="dataTables_filter"> -->
+          <form [formGroup]="formUpdate" (ngSubmit)="updateParticipants()">
+            <div>
+              <label class="searchInfo">Data Inicial de Nascimento: </label>
+              <app-date-time-picker name="activeStartDate" formControlName="dateFrom" required='true'>
+              </app-date-time-picker>
+            </div>
+            <!-- style="color: yellow"  -->
+            <div *ngIf="formUpdate.errors" class="invalid-feedback">
+              <div *ngIf="formUpdate.activeStartDate.errors.required">Data Inicial is required</div>
+            </div>
+            <div>
+              <label class="searchInfo">Data Final de Nascimento: </label>
+              <app-date-time-picker name="activeEndDate" formControlName="dateTo" required='true' (change)="reset()">
+              </app-date-time-picker>
+            </div>
+            <div *ngIf="formUpdate.errors" class="invalid-feedback">
+              <div *ngIf="formUpdate.activeEndDate.errors.required">Data final is required</div>
+            </div>
+            <div class="dataTables_filter">
+              <div class="mbr-section-btn">
+                <label class="searchInfo"></label>
+                <input class="btn btn-md btn-secondary display-4" type="submit" value="ATUALIZAR" />
+              </div>
+            </div>
+          </form>
+          <label *ngIf="!processing && sizeUpdated > 0" class="searchInfo">Enderecos Atualizados: {{sizeUpdated}}</label>
+          <label *ngIf="processing" class="searchInfo">Procesando...</label>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cid-qqW18eobct" id="footer1-f" data-rv-view="127">
+
+  <div class="container">
+    <div class="media-container-row content text-white">
+      <div class="col-12 col-md-3 mbr-fonts-style display-4">
+        <h5 class="pb-3">
+          Address
+        </h5>
+        <p class="mbr-text">Porto Alegre, RS, Brasil</p>
+      </div>
+      <div class="col-12 col-md-3 mbr-fonts-style display-4">
+        <h5 class="pb-3">
+          Contacts
+        </h5>
+        <p class="mbr-text">
+          Email: marcos.cerizola@gmail.com
+          <br>Phone: (51) 982303246 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+          <br>
+        </p>
+      </div>
+    </div>
+    <div class="footer-lower">
+      <div class="media-container-row">
+        <div class="col-sm-12">
+          <hr>
+        </div>
+      </div>
+      <div class="media-container-row mbr-white">
+        <div class="col-sm-6 copyright">
+          <p class="mbr-text mbr-fonts-style display-7">
+            © Copyright 2019 &nbsp;- All Rights Reserved
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="social-list align-right">
+            <div class="soc-item">
+              <a href="https://twitter.com/SnoopDogg" target="_blank">
+                <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+              </a>
+            </div>
+            <div class="soc-item">
+              <a href="https://www.facebook.com/OmarEpps" target="_blank">
+                <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social" media-simple="true"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script src="assets/web/assets/jquery/jquery.min.js"></script>
+<script src="assets/tether/tether.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/smooth-scroll/smooth-scroll.js"></script>
+<script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
+<script src="assets/data-tables/jquery.data-tables.min.js"></script>
+<script src="assets/data-tables/data-tables.bootstrap4.min.js"></script>
+<script src="assets/jarallax/jarallax.min.js"></script>
+<script src="assets/dropdown/js/script.min.js"></script>
+<script src="assets/theme/js/script.js"></script>
